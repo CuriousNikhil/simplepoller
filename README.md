@@ -33,7 +33,7 @@ dependencies {
 val poller = Poller.Builder()
       .get(url = "<URL>")                 // get method and provide url
       .setDispatcher(Dispatchers.Main)    // Set the dispatcher where you want your result of polling 
-                                            (Please add android/javafx/swing coroutines dependency before if you want to set the Main dispatcher)
+                                          // (Please add android/javafx/swing coroutines dependency before if you want to set the Main dispatcher)
       .onResponse {
           textview.text = it.text         // onResponse will be executed on each response received while polling
       }.onError {                        
