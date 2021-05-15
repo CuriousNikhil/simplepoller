@@ -1,0 +1,35 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'maven-publish'
+}
+
+
+
+publishing {
+    publications {
+        simplepoller(MavenPublication) {
+            group = 'me.nikhilchaudhari'
+            artifactId = 'simplepoller'
+            version = '0.0.1-alpha'
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            name = 'simplepoller-repo'
+            url = layout.buildDirectory.dir("simplepoller")
+        }
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0-RC"
+}
