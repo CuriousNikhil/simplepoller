@@ -22,7 +22,7 @@ Add dependency to your app level `build.gradle`
 
 ```groovy
 dependencies {
-   implementation 'com.github.CuriousNikhil:simplepoller:<latest-version-on-tag-above>'
+   implementation 'com.github.CuriousNikhil:simplepoller:0.0.1-alpha'
 }
 ```
 
