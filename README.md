@@ -50,3 +50,8 @@ poller.start()
 // Stop the poller
 poller.stop()
 ```
+
+---
+~~~
+Note: Documentation is in progress
+~~~
