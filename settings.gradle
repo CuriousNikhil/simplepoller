@@ -1,0 +1,3 @@
+include ':simplepoller'
+include ':app'
+rootProject.name = "Poller"
