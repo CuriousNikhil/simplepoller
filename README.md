@@ -32,6 +32,8 @@ dependencies {
 //build poller
 val poller = Poller.Builder()
       .get(url = "<URL>")                 // get method and provide url
+      .setIntervals(1000, 60000, 2, 2000) // set intervals base, max, delayfactor and delay 
+                                          // (or you can use .setInfinitePoll(true) to poll infinitely with provided `delay` value)
       .setDispatcher(Dispatchers.Main)    // Set the dispatcher where you want your result of polling 
                                           // (Please add android/javafx/swing coroutines dependency before if you want to set the Main dispatcher)
       .onResponse {
