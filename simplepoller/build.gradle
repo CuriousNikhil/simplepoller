@@ -4,25 +4,8 @@ plugins {
     id 'maven-publish'
 }
 
-
-
-publishing {
-    publications {
-        simplepoller(MavenPublication) {
-            group = 'me.nikhilchaudhari'
-            artifactId = 'simplepoller'
-            version = '0.0.1-alpha'
-            from components.java
-        }
-    }
-
-    repositories {
-        maven {
-            name = 'simplepoller-repo'
-            url = layout.buildDirectory.dir("simplepoller")
-        }
-    }
-}
+group = 'me.nikhilchaudhari'
+version = '0.0.1-alpha'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
