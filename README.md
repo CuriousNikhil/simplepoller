@@ -1,28 +1,15 @@
 # simplepoller
 A dead simple poller with kotlin coroutines and flow.
 
-[![](https://jitpack.io/v/CuriousNikhil/simplepoller.svg)](https://jitpack.io/#CuriousNikhil/simplepoller)
+[![](https://img.shields.io/badge/mavencentral-0.0.1--alpha-brightgreen)](https://github.com/CuriousNikhil/simplepoller)
 
 ## Add dependency
-
-Available on Jitpack
-
-At your root level `build.gradle`
-
-```groovy
-allprojects {
-  repositories {
-    ...
-    maven { url 'https://jitpack.io' }
-  }
-}
-```
 
 Add dependency to your app level `build.gradle`
 
 ```groovy
 dependencies {
-   implementation 'com.github.CuriousNikhil:simplepoller:0.0.1-alpha'
+    implementation 'me.nikhilchaudhari:simplepoller:0.0.1-alpha'
 }
 ```
 
