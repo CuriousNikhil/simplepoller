@@ -2,10 +2,66 @@ plugins {
     id 'java-library'
     id 'kotlin'
     id 'maven-publish'
+    id 'signing'
 }
 
 group = 'me.nikhilchaudhari'
 version = '0.0.1-alpha'
+
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'simplepoller'
+            from components.java
+
+            pom {
+                name = 'simplepoller'
+                description = 'A dead simple polling implementation in kotlin coroutines and flow'
+                url = 'https://github.com/CuriousNikhil/simplepoller'
+                licenses {
+                    license {
+                        name = 'MIT license'
+                        url = 'https://github.com/CuriousNikhil/simplepoller/blob/main/LICENSE'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'curiousnikhil'
+                        name = 'Nikhil Chaudhari'
+                        email = 'nikhyl777@gmail.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/CuriousNikhil/simplepoller.git'
+                    developerConnection = 'scm:git:ssh://github.com/CuriousNikhil/simplepoller.git'
+                    url = 'https://github.com/CuriousNikhil/simplepoller'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+
+            credentials {
+                username = "$NEXUS_USERNAME"
+                password = "$NEXUS_PASSWORD"
+            }
+
+            name = "simplepoller"
+            url = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8

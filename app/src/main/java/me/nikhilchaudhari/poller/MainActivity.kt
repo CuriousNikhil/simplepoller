@@ -1,8 +1,8 @@
 package me.nikhilchaudhari.poller
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.Dispatchers
 import me.nikhilchaudhari.simplepoller.Poller
 
@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
 
         poller = Poller.Builder()
             .get(url = "https://demo4034250.mockable.io/testpoll")
+            .setIntervals(1000, 60000, 2, 2000)
+            .setInfinitePoll(true)
             .setDispatcher(Dispatchers.Main)
             .onResponse {
                 textview.text = it.text
